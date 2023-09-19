@@ -16,7 +16,7 @@ class MyMessage extends StatelessWidget {
           ),
           child: const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: Text('Qui veniam sint ex sit et aute', style: TextStyle(color: Colors.white),),
+            child: Text('Qui veniam', style: TextStyle(color: Colors.white),),
           ),
         ),
         const SizedBox(height: 10)
