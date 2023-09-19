@@ -19,8 +19,17 @@ class OtroMyMessage extends StatelessWidget {
             child: Text('Consequat qui cillum.', style: TextStyle(color: Colors.white),),
           ),
         ),
-        const SizedBox(height: 10)
+        const SizedBox(height: 10),
+        const _ImageBurbuja(),
       ],
     );
+  }
+}
+
+class _ImageBurbuja extends StatelessWidget {
+  const _ImageBurbuja({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
