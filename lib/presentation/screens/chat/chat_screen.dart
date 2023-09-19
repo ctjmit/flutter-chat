@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:si_no_app/presentation/Widgets/chat/message_burbuja.dart';
 import 'package:si_no_app/presentation/Widgets/otro_message_burbuja.dart';
+import 'package:si_no_app/presentation/Widgets/shared/message_field_box.dart';
 
 
 class ChatScreen extends StatelessWidget {
@@ -43,7 +44,8 @@ class _ChatView extends StatelessWidget {
               },
             ),
           ),
-        Text('Hola mundo')
+          //Caja de texto de mensaje
+        const MessageFieldBox(),
         ],
         ) 
       ,)

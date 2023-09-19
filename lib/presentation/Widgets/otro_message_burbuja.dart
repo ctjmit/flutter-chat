@@ -19,20 +19,37 @@ class OtroMyMessage extends StatelessWidget {
             child: Text('Consequat qui cillum.', style: TextStyle(color: Colors.white),),
           ),
         ),
+        const SizedBox(height: 5),
+        _ImageBurbuja(),
         const SizedBox(height: 10),
-        const _ImageBurbuja(),
       ],
     );
   }
 }
 
 class _ImageBurbuja extends StatelessWidget {
-  const _ImageBurbuja({super.key});
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
-      child: Image.network(''),
+      child: Image.network('https://yesno.wtf/assets/no/9-dc99c0e3c066b28d3a12262692cd5432.gif', 
+      width: size.width * 0.7,
+      height: 150,
+      fit: BoxFit.cover,
+      loadingBuilder: (context, child, loadingProgress) {
+        if (loadingProgress == null) return child;
+          return Container(
+              width: size.width * 0.7,
+              height: 150,
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+              child: const Text('estoy enviando una imagen'),
+          );
+        
+      },
+      ),
+
     );
   }
 }
