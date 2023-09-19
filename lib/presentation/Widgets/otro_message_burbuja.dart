@@ -30,6 +30,9 @@ class _ImageBurbuja extends StatelessWidget {
   const _ImageBurbuja({super.key});
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(20),
+      child: Image.network(''),
+    );
   }
 }
