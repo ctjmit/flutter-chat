@@ -16,7 +16,7 @@ class OtroMyMessage extends StatelessWidget {
           ),
           child: const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: Text('Consequat qui cillum.', style: TextStyle(color: Colors.white),),
+            child: Text('otro mensaje', style: TextStyle(color: Colors.white),),
           ),
         ),
         const SizedBox(height: 5),
@@ -46,10 +46,8 @@ class _ImageBurbuja extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
               child: const Text('estoy enviando una imagen'),
           );
-        
       },
       ),
-
     );
   }
 }
