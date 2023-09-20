@@ -42,6 +42,7 @@ class _ChatView extends StatelessWidget {
         child: Column(children: [
           Expanded(
             child: ListView.builder(
+              controller: chatprovider.chatScrollControler,
               itemCount: chatprovider.messagesList.length,   //se utitliza un constructor vacio
               itemBuilder: (context, index){
                 final message = chatprovider.messagesList[index];
