@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:si_no_app/domain/entities/message.dart';
 
 class OtroMyMessage extends StatelessWidget {
-  const OtroMyMessage({super.key});
+  final Message message;
+
+  const OtroMyMessage({
+    super.key,
+    required this.message
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,13 +20,15 @@ class OtroMyMessage extends StatelessWidget {
             color: colors.primary,
             borderRadius: BorderRadius.circular(20)
           ),
-          child: const Padding(
+          child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: Text('otro mensaje', style: TextStyle(color: Colors.white),),
+            child:  Text(
+                message.text,
+            style:TextStyle(color: Colors.white),),
           ),
         ),
         const SizedBox(height: 5),
-        _ImageBurbuja(),
+        _ImageBurbuja(message.imageUrl!),
         const SizedBox(height: 10),
       ],
     );
@@ -28,13 +36,15 @@ class OtroMyMessage extends StatelessWidget {
 }
 
 class _ImageBurbuja extends StatelessWidget {
+  final String imageUrl;
+  const _ImageBurbuja(this.imageUrl);
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
-      child: Image.network('https://yesno.wtf/assets/no/9-dc99c0e3c066b28d3a12262692cd5432.gif', 
+      child: Image.network(imageUrl, 
       width: size.width * 0.7,
       height: 150,
       fit: BoxFit.cover,
@@ -44,7 +54,7 @@ class _ImageBurbuja extends StatelessWidget {
               width: size.width * 0.7,
               height: 150,
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-              child: const Text('estoy enviando una imagen'),
+              child: const Text('estoy enviando una imagen...'),
           );
       },
       ),
